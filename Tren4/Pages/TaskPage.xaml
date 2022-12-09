@@ -9,6 +9,45 @@
       Title="TaskPage">
 
     <Grid Background="White">
-        
+        <ListView x:Name="ListTask">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="70"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel>
+                            <TextBlock Style="{StaticResource TitleText}" Text="{Binding Title}" FontWeight="Bold"/>
+                            <TextBlock Style="{StaticResource AccentText}" Text="/"/>
+                            <TextBlock Style="{StaticResource AccentText}" Text="{Binding Status.Title}"/>
+                        </DockPanel>
+                        <StackPanel Grid.Row="1">
+                            <TextBlock>
+                                <Run Text="Исполнитель: "/>
+                                <Run Text="{Binding Executor.User.MiddleName}"/>
+                                <Run Text=" "/>
+                                <Run Text="{Binding Executor.User.FirstName}"/>
+                                <Run Text=" "/>
+                                <Run Text="{Binding Executor.User.LastName}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Менеджер: "/>
+                                <Run Text="{Binding Executor.Manager.User.MiddleName}"/>
+                                <Run Text=" "/>
+                                <Run Text="{Binding Executor.Manager.User.FirstName}"/>
+                                <Run Text=" "/>
+                                <Run Text="{Binding Executor.Manager.User.LastName}"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

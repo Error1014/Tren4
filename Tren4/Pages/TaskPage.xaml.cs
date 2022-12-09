@@ -23,6 +23,8 @@ namespace Tren4.Pages
         public TaskPage()
         {
             InitializeComponent();
+            var data = trenEntities.GetContext().Task.ToList();
+            ListTask.ItemsSource = data;
         }
     }
 }

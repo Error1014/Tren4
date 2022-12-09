@@ -31,6 +31,10 @@ namespace Tren4.Pages
             {
                 MainWindow.MainWindowFrame.Content = new Pages.TaskPage();
             }
+            else
+            {
+                MainWindow.MainWindowFrame.Content = new Pages.TaskPage();
+            }
         }
     }
 }
