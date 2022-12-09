@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Tren4
+namespace Tren4.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для TaskPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TaskPage : Page
     {
-        public static Frame MainWindowFrame;
-        public MainWindow()
+        public TaskPage()
         {
             InitializeComponent();
-            MainWindowFrame = MainFrame;
-            MainWindowFrame.Content = new Pages.AutorizationPage();
         }
     }
 }
